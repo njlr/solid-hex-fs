@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Demo.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../SolidHex.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Browser.Dom" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>
