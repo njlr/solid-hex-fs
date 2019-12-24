@@ -17,3 +17,19 @@ yarn webpack-dev-server
 ```
 
 Click to select a hexagon.
+
+## Install
+
+Install using Paket. 
+
+Add this line to your `paket.dependencies`:
+
+```
+github njlr/solid-hex-fs SolidHex.fs
+```
+
+Add this line to your `paket.references`:
+
+```
+File: SolidHex.fs
+```
