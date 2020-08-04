@@ -48,6 +48,12 @@ type Layout =
 
 module Hex =
 
+  let inline q (Hex (q, _) : Hex<_>) =
+    q
+
+  let inline r (Hex (_, r) : Hex<_>) =
+    r
+
   let inline s (Hex (q, r) : Hex<_>) =
     LanguagePrimitives.GenericZero - q - r
 
