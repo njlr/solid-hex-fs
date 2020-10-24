@@ -20,7 +20,7 @@ Click to select a hexagon.
 
 ## Install
 
-Install using Paket. 
+Install using [Paket](https://fsprojects.github.io/Paket/). 
 
 Add this line to your `paket.dependencies`:
 
