@@ -4,6 +4,9 @@ namespace SolidHex
 type Hex<'T> =
   | Hex of 'T * 'T
   with
+    static member inline get_Zero () = 
+      Hex (LanguagePrimitives.GenericZero, LanguagePrimitives.GenericZero)
+
     static member inline (+) (Hex (q1, r1), Hex (q2, r2)) =
       Hex (q1 + q2, r1 + r2)
 
@@ -26,6 +29,7 @@ type HexI = Hex<int>
 
 type HexF = Hex<float>
 
+[<Struct>]
 type Orientation =
   {
     F0 : float
@@ -39,6 +43,7 @@ type Orientation =
     StartAngle : float
   }
 
+[<Struct>]
 type Layout =
   {
     Orientation : Orientation
@@ -116,6 +121,7 @@ module Hex =
   let inline rotateRight (Hex (q, r) : Hex<_>) : Hex<_> =
     hex -r (q + r)
 
+  [<Struct>]
   type Direction =
   | NorthEast
   | East
