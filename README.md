@@ -16,11 +16,13 @@ yarn install
 yarn webpack-dev-server
 ```
 
+![Demo](./demo.png)
+
 Click to select a hexagon.
 
 ## Install
 
-Install using [Paket](https://fsprojects.github.io/Paket/). 
+Install using [Paket](https://fsprojects.github.io/Paket/).
 
 Add this line to your `paket.dependencies`:
 
