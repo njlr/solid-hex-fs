@@ -4,7 +4,7 @@ namespace SolidHex
 type Hex<'T> =
   | Hex of 'T * 'T
   with
-    static member inline get_Zero () = 
+    static member inline get_Zero () =
       Hex (LanguagePrimitives.GenericZero, LanguagePrimitives.GenericZero)
 
     static member inline (+) (Hex (q1, r1), Hex (q2, r2)) =
@@ -28,6 +28,8 @@ type Hex<'T> =
 type HexI = Hex<int>
 
 type HexF = Hex<float>
+
+type HexF32 = Hex<float32>
 
 [<Struct>]
 type Orientation =
@@ -165,8 +167,23 @@ module Hex =
   let inline abs (Hex (q, r) : _) =
     hex (abs q) (abs r)
 
-  let inline toHexI (Hex (q, r)) =
+  let inline toHexI (Hex (q, r)) : HexI =
     Hex (int q, int r)
 
-  let inline toHexF (Hex (q, r)) =
+  let inline toHexF (Hex (q, r)) : HexF =
     Hex (float q, float r)
+
+  let inline toHexF32 (Hex (q, r)) : HexF32 =
+    Hex (float32 q, float32 r)
+
+module HexI =
+
+  let zero = Hex.hex 0 0 : HexI
+
+module HexF =
+
+  let zero = Hex.hex 0.0 0.0 : HexF
+
+module HexF32 =
+
+  let zero = Hex.hex 0.0f 0.0f : HexF32
