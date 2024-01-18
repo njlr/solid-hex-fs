@@ -6,3 +6,5 @@ obj
 **/*.fs.js
 
 nuget
+
+Scratch.fsx
