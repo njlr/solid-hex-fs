@@ -13,7 +13,7 @@ The demo is a Fable app.
 ```bash
 cd ./demo
 yarn install
-yarn webpack-dev-server
+yarn start
 ```
 
 ![Demo](./demo.png)
