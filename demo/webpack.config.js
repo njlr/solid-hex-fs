@@ -10,22 +10,13 @@ console.log({ mode });
 module.exports = {
   mode,
   devtool: isProduction ? false : 'eval-source-map',
-  entry: './src/Demo.fsproj',
+  entry: './Demo.fs.js',
   output: {
     path: path.join(__dirname, './out'),
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './out',
     port: 8080,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.fs(x|proj)?$/,
-        use: 'fable-loader',
-      },
-    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

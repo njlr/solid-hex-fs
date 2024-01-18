@@ -32,6 +32,15 @@ type HexF = Hex<float>
 type HexF32 = Hex<float32>
 
 [<Struct>]
+type Direction =
+  | NorthEast
+  | East
+  | SouthEast
+  | SouthWest
+  | West
+  | NorthWest
+
+[<Struct>]
 type Orientation =
   {
     F0 : float
@@ -53,6 +62,20 @@ type Layout =
     Origin : float * float
   }
 
+[<RequireQualifiedAccess>]
+module Direction =
+
+  let all =
+    [
+      NorthEast
+      East
+      SouthEast
+      SouthWest
+      West
+      NorthWest
+    ]
+
+[<RequireQualifiedAccess>]
 module Hex =
 
   let inline q (Hex (q, _) : Hex<_>) =
@@ -123,24 +146,7 @@ module Hex =
   let inline rotateRight (Hex (q, r) : Hex<_>) : Hex<_> =
     hex -r (q + r)
 
-  [<Struct>]
-  type Direction =
-  | NorthEast
-  | East
-  | SouthEast
-  | SouthWest
-  | West
-  | NorthWest
-
-  let directions =
-    [
-      NorthEast
-      East
-      SouthEast
-      SouthWest
-      West
-      NorthWest
-    ]
+  let directions = Direction.all
 
   let inline direction magnitude (direction : Direction) =
     let zero = LanguagePrimitives.GenericZero
@@ -176,14 +182,17 @@ module Hex =
   let inline toHexF32 (Hex (q, r)) : HexF32 =
     Hex (float32 q, float32 r)
 
+[<RequireQualifiedAccess>]
 module HexI =
 
   let zero = Hex.hex 0 0 : HexI
 
+[<RequireQualifiedAccess>]
 module HexF =
 
   let zero = Hex.hex 0.0 0.0 : HexF
 
+[<RequireQualifiedAccess>]
 module HexF32 =
 
   let zero = Hex.hex 0.0f 0.0f : HexF32

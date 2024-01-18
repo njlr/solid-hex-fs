@@ -92,16 +92,3 @@ window.requestAnimationFrame (fun t ->
   loop t t
 )
 |> ignore
-
-// [<EntryPoint>]
-// let main argv =
-
-//   let f : Hex<float> = Hex (1.0, 2.0) + Hex (4.0, 3.0)
-
-//   printfn "%O" <| f
-
-//   printfn "%O" <| (Hex (3, 4)) + (Hex (7, 6))
-
-//   printfn "%O" <| (Hex (3, 4) * 10)
-
-//   0

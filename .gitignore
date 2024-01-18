@@ -1,3 +1,8 @@
 bin
 obj
+
 .ionide
+
+**/*.fs.js
+
+nuget
